@@ -10,4 +10,4 @@ jobs:
     uses: davesadiv/reusable-cortex-cli/.github/workflows/cortex-reusable-scan.yml@main
     with:
       image_name: "frontend-app:latest"
-    secrets: inherit  # This automatically passes all repo secrets to the template
+    secrets: inherit # Automatically passes all Repository secrets
