@@ -1,18 +1,14 @@
-name: Frontend App Scan
+name: Security Scan
 
 on:
   push:
-    branches:
-      - main
-  workflow_dispatch:
+    branches: [main]
 
 jobs:
-  run-security-scan:
-    # Update 'your-org' and 'central-security-repo' to your actual names
+  run-scan:
     uses: davesadiv/reusable-cortex-cli/.github/workflows/cortex-reusable-scan.yml@main
     with:
-      image_name: "frontend-production-image:latest"
-      wait_time: "300"
+      image_name: "my-frontend-app:latest"
     secrets:
       CORTEX_API_KEY: ${{ secrets.CORTEX_API_KEY }}
       CORTEX_API_KEY_ID: ${{ secrets.CORTEX_API_KEY_ID }}
