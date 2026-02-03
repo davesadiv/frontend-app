@@ -9,7 +9,7 @@ on:
 jobs:
   run-security-scan:
     # Update 'your-org' and 'central-security-repo' to your actual names
-    uses: your-org/central-security-repo/.github/workflows/cortex-reusable-scan.yml@main
+    uses: davesadiv/reusable-cortex-cli/.github/workflows/cortex-reusable-scan.yml@main
     with:
       image_name: "frontend-production-image:latest"
       wait_time: "300"
