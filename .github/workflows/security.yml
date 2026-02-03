@@ -1,14 +1,17 @@
-name: Security Scan
+name: Frontend Security Scan
 
 on:
   push:
-    branches: [main]
-#jobs
+    branches: [main, cortex-cli]
+  workflow_dispatch:
+
 jobs:
-  run-scan:
+  cortex-scan:
+    # This tells GitHub to look inside the "Cortex" environment for the secrets
+    environment: Cortex 
     uses: davesadiv/reusable-cortex-cli/.github/workflows/cortex-reusable-scan.yml@main
     with:
-      image_name: "my-frontend-app:latest"
+      image_name: "frontend-app:latest"
     secrets:
       CORTEX_API_KEY: ${{ secrets.CORTEX_API_KEY }}
       CORTEX_API_KEY_ID: ${{ secrets.CORTEX_API_KEY_ID }}
