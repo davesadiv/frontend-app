@@ -3,7 +3,7 @@ name: Security Scan
 on:
   push:
     branches: [main]
-
+#jobs
 jobs:
   run-scan:
     uses: davesadiv/reusable-cortex-cli/.github/workflows/cortex-reusable-scan.yml@main
