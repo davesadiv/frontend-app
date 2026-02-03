@@ -7,6 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
+  environment: Cortex 
   cortex-scan:
     # This calls your public/shared reusable repo
     uses: davesadiv/reusable-cortex-cli/.github/workflows/cortex-reusable-scan.yml@main
